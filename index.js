@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
 
 // Use async/await to connect to MongoDB
 async function connectToDatabase() {
   try {
-    await mongoose.connect("mongodb://sourabh:lrknfsfkfk@16.171.141.87:27017/", {
+    await mongoose.connect("mongodb://sourabh:lrknfsfkfk@16.171.13.41:27017/", {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
