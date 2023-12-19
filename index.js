@@ -81,6 +81,10 @@ app.delete('/students/:id', async (req, res) => {
 });
 
 
+// Define a route for the root path
+app.get('/', (req, res) => {
+  res.send('Welcome to the Student API');
+});
 
 // Call the connectToDatabase function and then createTeacher
 connectToDatabase().then(() => {
